@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'lld3f+^z82lk8a!y3o&9fve-@ck$hb=nricja$=0pz$5&m3_=@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hunt3r.pythonanywhere.com']
 
 
 # Application definition
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-	'polls.apps.PollsConfig',
+    'polls.apps.PollsConfig',
 ]
 
 MIDDLEWARE = [
@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
 	'default':{
 		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'mysite',
-		'USER': 'root',
-		'PASSWORD': 'root',
-		'HOST': 'localhost',
+		'NAME': 'hunt3r$mysite',
+		'USER': 'hunt3r',
+		'PASSWORD': 'Python_2018_MySQL',
+		'HOST': 'hunt3r.mysql.pythonanywhere-services.com',
 		'PORT': 3306,
 	}
 }
@@ -131,3 +131,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
