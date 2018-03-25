@@ -23,9 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'lld3f+^z82lk8a!y3o&9fve-@ck$hb=nricja$=0pz$5&m3_=@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ['hunt3r.pythonanywhere.com']
+###### DEPLOYING ######
+#DEBUG = False
+#ALLOWED_HOSTS = ['hunt3r.pythonanywhere.com']
+
+DEBUG = True
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -85,11 +90,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
 	'default':{
 		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'hunt3r$mysite',
-		'USER': 'hunt3r',
-		'PASSWORD': 'Python_2018_MySQL',
-		'HOST': 'hunt3r.mysql.pythonanywhere-services.com',
-		'PORT': 3306,
+		'OPTIONS': {
+			###### DEPLOYING ######
+			# 'read_default_file': os.path.join(BASE_DIR, 'deploy_db.cnf'),
+			'read_default_file': os.path.join(BASE_DIR, 'db.cnf'),
+		}
 	}
 }
 

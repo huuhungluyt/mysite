@@ -1,0 +1,6 @@
+[client]
+database = mysite
+user = hunt3r
+password = Python_2018_MySQL
+host = hunt3r.mysql.pythonanywhere-services.com
+default-character-set = utf8
