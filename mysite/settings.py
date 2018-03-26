@@ -23,15 +23,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'lld3f+^z82lk8a!y3o&9fve-@ck$hb=nricja$=0pz$5&m3_=@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+ALLOWED_HOSTS = []
 
-###### DEPLOYING ######
-DEBUG = False
-ALLOWED_HOSTS = ['hunt3r.pythonanywhere.com']
+DEPLOY = False
+if os.environ['DJANGO_DEPLOY'] in ['1', 'True', 'true']:
+	DEPLOY = True
 
-#DEBUG = True
-
-#ALLOWED_HOSTS = []
-
+if DEPLOY:
+	DEBUG = False
+	ALLOWED_HOSTS = ['hunt3r.pythonanywhere.com']
 
 # Application definition
 
@@ -86,14 +87,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #    }
 #}
+DB_CONFIG_FILE = os.path.join(BASE_DIR, 'db.cnf')
+
+if DEPLOY:
+	DB_CONFIG_FILE = os.path.join(BASE_DIR, 'deploy_db.cnf')
 
 DATABASES = {
 	'default':{
 		'ENGINE': 'django.db.backends.mysql',
 		'OPTIONS': {
-			###### DEPLOYING ######
-			'read_default_file': os.path.join(BASE_DIR, 'deploy_db.cnf'),
-			#'read_default_file': os.path.join(BASE_DIR, 'db.cnf'),
+			'read_default_file': DB_CONFIG_FILE,
 		}
 	}
 }
