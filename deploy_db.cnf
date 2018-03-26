@@ -1,5 +1,5 @@
 [client]
-database = mysite
+database = hunt3r$mysite
 user = hunt3r
 password = Python_2018_MySQL
 host = hunt3r.mysql.pythonanywhere-services.com
