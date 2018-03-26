@@ -50,7 +50,7 @@ class QuestionDetailView(generic.DetailView):
 
 class QuestionResultView(generic.DetailView):
 	model = Question
-#	template_name = 'polls/question_result.html'
+	template_name = 'polls/question_result.html'
 
 
 def question_vote(request, question_id):
