@@ -26,9 +26,7 @@ SECRET_KEY = 'lld3f+^z82lk8a!y3o&9fve-@ck$hb=nricja$=0pz$5&m3_=@'
 DEBUG = True
 ALLOWED_HOSTS = []
 
-DEPLOY = False
-if os.environ['DJANGO_DEPLOY'] in ['1', 'True', 'true']:
-	DEPLOY = True
+DEPLOY = True
 
 if DEPLOY:
 	DEBUG = False
