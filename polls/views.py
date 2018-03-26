@@ -7,7 +7,7 @@ from django.template import loader
 from django.urls import reverse
 from django.views import generic
 
-from .models import Question
+from .models import Question, Choice
 
 
 def question_index(request):
