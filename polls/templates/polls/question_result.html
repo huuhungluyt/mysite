@@ -1,0 +1,9 @@
+{{question.content}}
+
+<ul>
+{% for c in question.choice_set.all %}
+
+<li>{{c.content}} -- {{c.vote}} vote{{c.vote|pluralize}}</li>
+	
+{% endfor %}
+</ul>

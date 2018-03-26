@@ -25,12 +25,12 @@ SECRET_KEY = 'lld3f+^z82lk8a!y3o&9fve-@ck$hb=nricja$=0pz$5&m3_=@'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ###### DEPLOYING ######
-DEBUG = False
-ALLOWED_HOSTS = ['hunt3r.pythonanywhere.com']
+#DEBUG = False
+#ALLOWED_HOSTS = ['hunt3r.pythonanywhere.com']
 
-#DEBUG = True
+DEBUG = True
 
-#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -92,8 +92,8 @@ DATABASES = {
 		'ENGINE': 'django.db.backends.mysql',
 		'OPTIONS': {
 			###### DEPLOYING ######
-			'read_default_file': os.path.join(BASE_DIR, 'deploy_db.cnf'),
-			#'read_default_file': os.path.join(BASE_DIR, 'db.cnf'),
+			#'read_default_file': os.path.join(BASE_DIR, 'deploy_db.cnf'),
+			'read_default_file': os.path.join(BASE_DIR, 'db.cnf'),
 		}
 	}
 }
